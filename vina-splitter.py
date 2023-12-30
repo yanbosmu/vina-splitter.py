@@ -9,7 +9,7 @@
 import os # Import necessary os module
 
 cwd = os.getcwd() #retrieves current directory that the script is in
-new_dir = "/home/yanbosmu/zinc1"
+new_dir = "/home/yanbosmu/zinc24"
 os.mkdir(new_dir)
 for file in os.listdir(cwd): #iterates through all files in current directory
     filename = os.fsdecode(file)
