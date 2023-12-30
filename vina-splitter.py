@@ -9,6 +9,8 @@
 import os # Import necessary os module
 
 cwd = os.getcwd() #retrieves current directory that the script is in
+new_dir = "/path/to/new_folder"
+os.mkdir(new_dir)
 for file in os.listdir(cwd): #iterates through all files in current directory
     filename = os.fsdecode(file)
     if filename.endswith(".pdbqt"): #only opens pdbqt files
@@ -23,7 +25,8 @@ for file in os.listdir(cwd): #iterates through all files in current directory
                         if line[:5] == "MODEL":
                             count = line[6:].rstrip()
                             fName = baseFileName+"_model_" + str(count) + ".pdb" #names file based on model number
-                            writing_file = open(fName, "w")
+                            new_file_path = os.path.join(new_dir, fName)
+                            writing_file = open(new_file_path, "w")
                             writing_file.write(line)
                         else:
                             writing_file.write(line)
