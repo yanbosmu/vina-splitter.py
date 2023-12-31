@@ -23,7 +23,7 @@ for file in os.listdir(cwd): #iterates through all files in current directory
                 for line in reading_file:
                     if "ENDMDL" not in line: 
                         if line[:5] == "MODEL":
-                            count = line[10:].rstrip()
+                            count = line[6:].rstrip()
                             fName = baseFileName+"_model_" + str(count) + ".pdb" #names file based on model number
                             new_file_path = os.path.join(new_dir, fName)
                             writing_file = open(new_file_path, "w")
