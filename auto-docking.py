@@ -51,3 +51,5 @@ while True:
 
     # 更新文件夹索引，循环到下一个文件夹
     rename_index = (rename_index + 1) % len(subfolders)
+
+#文件需修改，此为无限循环，且重命名的文件可能同之前一致。
